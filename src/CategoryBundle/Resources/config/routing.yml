@@ -1,0 +1,28 @@
+categoryblog:
+    path:  /admincategory/{_locale}
+    defaults: { _controller:CategoryBundle:Admin:showcatadmin}
+    requirements:
+        _locale:  en|ar	
+    options:
+        expose: true
+addcategoryblog:
+    path:  /admincategory/add/{_locale}
+    defaults: { _controller:CategoryBundle:Admin:addcatadmin}
+    requirements:
+        _locale:  en|ar
+    options:
+        expose: true		
+editcategoryblog:
+    path:  /editcategoryblog/{catid}/{_locale}
+    defaults: { _controller:CategoryBundle:Admin:editcatadmin}
+    requirements:
+        _locale:  en|ar
+    options:
+        expose: true		
+deletecategoryblog:
+    path:  /deletecategoryblog/{catid}/{_locale}
+    defaults: { _controller:CategoryBundle:Admin:delcatadmin}
+    requirements:
+        _locale:  en|ar
+    options:
+        expose: true

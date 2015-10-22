@@ -1,0 +1,3 @@
+submitaddcomment:
+    path: /submitaddcomment
+    defaults: { _controller: CommentsBundle:View:submitaddcomment }	

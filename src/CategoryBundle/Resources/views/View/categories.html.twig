@@ -1,0 +1,14 @@
+<div class="widget">
+						<div class="widget-title"><i class="fa fa-folder-open"></i>{% trans from "category" %}
+						category
+						{% endtrans %}
+						</div>
+						<div class="widget-categories">
+							<ul>
+							{% for category in data %}
+								<li><a href="{{ path('catblog',{'catid' : category.id })}}">{{ category.name }}</a><i class="fa fa-angle-double-right"></i></li>
+
+								{% endfor %}
+							</ul>
+						</div><!-- End widget-categories -->
+					</div>

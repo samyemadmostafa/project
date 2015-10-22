@@ -1,0 +1,186 @@
+
+{% extends 'styleadmin.html.twig' %}
+{% block title %}
+
+
+<title>{% trans from "user" %} edit user {% endtrans %}</title>
+
+{% endblock %}
+{% block mainblock %}
+<style>
+.textsize
+{
+width:400px;
+}
+</style>
+<div class="main-content">
+				  <div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>			
+<center><b>{% trans from "user" %} user {% endtrans %}</b></center>						
+					</div>
+					<div class="page-content"><!-- /.page-header -->
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="row">
+								  <div class="col-xs-12">
+								  <div class="col-sm-6" style="width:800px;">
+										<div class="tabbable">
+											<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">
+												<li class="active">
+													<a data-toggle="tab" href="#">{% trans from "user" %} user {% endtrans %}</a>
+												</li>
+											</ul>
+         <div class="tab-content">
+										<div id="#" class="tab-pane in active">
+{{form_start(form) }}
+
+                                    
+                                    
+									<br/>
+									<br/>
+									
+                                    <div class="form-group"  >
+									<h3>{{ form_errors(form.username) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} name {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.username) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.password.first) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{{ form_label(form.password.first)}}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.password.first,{'value' :  form.vars.value.password }) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<br/>
+									<div class="form-group"  >
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{{ form_label(form.password.second)}}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.password.second,{'value' :  form.vars.value.password }) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.email) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} email {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.email) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.image) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} image {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.image) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.facebook) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} facebook {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.facebook) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.twitter) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} twitter {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.twitter) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<br/>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} google_plus {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.google_plus) }}
+										</div>
+									</div>
+<br/>
+									<br/>									
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.linkedin) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} linkedin {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.linkedin) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group"  >
+									<h3>{{ form_errors(form.youtube) }}</h3>
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} youtube {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.youtube) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									
+                                    <div class="clearfix form-actions" style="margin-top:100px;position:relative;">
+										<div class="col-md-offset-3 col-md-9">
+
+										
+{{ form_widget(form.save,{ 'label': 'edit user' }) }}
+									
+                                            
+                                            
+
+											
+										</div>
+									</div>        
+                                               {{ form_end(form) }}
+												</div>
+												</div>
+	</div>										
+	<br/>
+	<br/>
+	<br/>
+											{% if app.session.flashbag.has('success')  %}
+<button class="btn btn-success" style="left:400px;bottom:20px;width:300px;">{{ app.session.flashbag.get('success').0 }}</button>											
+<script>
+setTimeout(function(){
+  window.location = Routing.generate('adminuser',{_locale : "{{ app.request.locale }}"});
+}, 2000);
+</script>
+{% endif %} 
+										
+								  </div>
+							  </div>
+							  {% endblock %}
+							  

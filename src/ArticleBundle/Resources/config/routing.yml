@@ -1,0 +1,22 @@
+adminarticle:
+    path:  /adminarticle/{_locale}
+    defaults: { _controller:ArticleBundle:Admin:showarticleadmin}
+    requirements:
+        _locale:  en|ar	
+    options:
+        expose: true
+addadminarticle:
+    path:  /adminarticle/add/{_locale}
+    defaults: { _controller:ArticleBundle:Admin:addadminarticle}
+    requirements:
+        _locale:  en|ar		
+editadminarticle:
+    path:  /editadminarticle/{articleid}/{_locale}
+    defaults: { _controller:ArticleBundle:Admin:editadminarticle}
+    requirements:
+        _locale:  en|ar		
+deleteadminarticle:
+    path:  /deleteadminarticle/{articleid}/{_locale}
+    defaults: { _controller:ArticleBundle:Admin:deladminarticle}
+    requirements:
+        _locale:  en|ar

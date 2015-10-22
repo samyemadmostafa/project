@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!-- begin head -->
+{{ include('css/head.html.twig') }}
+	<!-- End head -->
+<body>
+
+
+
+<div id="wrap" class="grid_1200">
+	<div class="wrap-search">
+		
+	</div><!-- End wrap-search -->
+	<!-- begin header -->
+	{{ include('css/header.html.twig') }}
+	<!-- End header -->
+	
+	<div class="clearfix"></div>
+	<div class="sections">
+		<div class="container">
+			<div class="row">
+			{% block mainblock %}
+			
+			{% endblock %}
+				
+				<div class="col-md-4 sidebar">
+				<!-- begin widget authors  -->
+				{{ render(controller('UserBundle:View:show')) }}
+					<!-- End widget authors  -->
+					
+					
+					{{ render(controller('CategoryBundle:View:show')) }}
+				</div><!-- End sidebar -->
+			</div><!-- End row -->
+		</div><!-- End container -->
+	</div><!-- End sections -->
+	
+	<div class="clearfix"></div>
+	<!-- begin footer -->
+	{{ include('css/footer.html.twig') }}
+	<!-- End footer -->
+	
+</div><!-- End wrap -->
+
+<div class="go-up"><i class="fa fa-chevron-up"></i></div>
+
+<!-- js -->
+{{ include('css/scripts.html.twig') }}
+<!-- End js -->
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}	
+			{% block mainblock %}
+				<div class="col-md-8 main-content">
+				<!-- begin post post-2 post-gallery single-post -->
+				{{ render(controller('ArticleBundle:View:showpostdesc',{'articlecat' : articleid})) }}
+					<!-- End post post-2 post-gallery single-post -->
+					
+					
+					
+					
+					<div class="height_20"></div>
+					<!-- begin post post-2 -->
+					<!-- End post post-2 -->
+					
+					<!-- begin post main comments -->
+					{{ render(controller('CommentsBundle:View:show',{'articlecat' : articleid})) }}
+					<!-- End post main comments -->
+					<!-- begin post add comment -->
+					{{ render(controller('CommentsBundle:View:add',{'articlecat' : articleid})) }}
+					<!-- End post add comment -->
+					
+				</div><!-- End main-content -->
+				{% endblock %}
+				
+	
+	

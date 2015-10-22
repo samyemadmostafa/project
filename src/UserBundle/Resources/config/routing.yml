@@ -1,0 +1,24 @@
+adminuser:
+    path:  /adminuser/{_locale}
+    defaults: { _controller:UserBundle:Admin:showuseradmin}
+    requirements:
+        _locale:  en|ar	
+    options:
+        expose: true
+editadminuser:
+    path:  /editadminuser/{userid}/{_locale}
+    defaults: { _controller:UserBundle:Admin:editadminuser}
+    requirements:
+        _locale:  en|ar
+logout:
+     path:   /logout
+     defaults: { _controller:UserBundle:Login:logout}
+login:
+     path:   /login
+     defaults: { _controller:UserBundle:Login:login}
+login_check:
+     path:   /login_check
+     defaults: { _controller:UserBundle:Login:loginCheck}
+backfront:
+     path:   /backfront
+     defaults: { _controller:UserBundle:Login:backfront}	 

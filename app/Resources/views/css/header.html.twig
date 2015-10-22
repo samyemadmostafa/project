@@ -1,0 +1,26 @@
+<header id="header">
+		<div class="container clearfix">
+			<div class="logo"><a href="index.html">Logger</a></div><!-- End logo -->
+			<nav class="navigation">
+				<ul>
+					
+					
+					<li class="current_page_item"><a href="">
+					{% trans from "public" %} language {% endtrans %}</a>
+						<ul>
+							<li><a href="{{ url }}">english</a></li>
+							<li><a href="{{ urlarabic}}">العريبه</a></li>
+						
+						</ul>
+					</li>
+					<li class="current_page_item"><a href="{{ path('mainblog')}}">
+					{% trans from "public" %} main {% endtrans %}</a>
+					</li>
+					</li>
+					<li class="current_page_item"><a href="{{ path('login')}}">
+					{% trans from "public" %} dashboard {% endtrans %}</a>
+					</li>
+				</ul>
+			</nav><!-- End navigation -->
+		</div><!-- End container -->
+	</header><!-- End header -->

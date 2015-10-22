@@ -1,0 +1,139 @@
+
+{% extends 'styleadmin.html.twig' %}
+{% block title %}
+{% if action == 'add' %}
+<title>{% trans from "article" %} add article {% endtrans %}</title>
+{% endif %}
+{% if action == 'edit' %}
+<title>{% trans from "article" %} edit article {% endtrans %}</title>
+{% endif %}
+{% if action == 'del' %}
+<title>{% trans from "article" %} delete article {% endtrans %}</title>
+{% endif %}
+{% endblock %}
+{% block mainblock %}
+<style>
+.textsize
+{
+width:500px;
+height:200px;
+}
+</style>
+<div class="main-content">
+				  <div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>			
+<center><b>{% trans from "article" %} article {% endtrans %}</b></center>						
+					</div>
+					<div class="page-content"><!-- /.page-header -->
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="row">
+								  <div class="col-xs-12">
+								  <div class="col-sm-6" style="width:800px;">
+										<div class="tabbable">
+											<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">
+												<li class="active">
+													<a data-toggle="tab" href="#">{% trans from "article" %} article {% endtrans %}</a>
+												</li>
+											</ul>
+         <div class="tab-content">
+										<div id="#" class="tab-pane in active">
+{{form_start(form) }}
+
+                                    
+                                    
+									<br/>
+									<br/>
+									{% if action != 'del' %}
+                                    <div class="form-group"  >
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} name {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.name) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									
+									<div class="form-group"  >
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "article" %} article description {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.description) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group" style="margin-top:120px;position:relative;"  >
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "public" %} image {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.image) }}
+										</div>
+									</div> 
+									<br/>
+									<br/>
+									<div class="form-group" style="margin-top:50px;position:relative;"  >
+<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><b>{% trans from "category" %} category {% endtrans %}</b></label>
+
+										<div class="col-sm-9">
+										
+{{ form_widget(form.category_id) }}
+										</div>
+									</div> 
+																		
+									
+									
+{% else %}
+ <div class="form-group"  >
+
+
+										<div class="col-sm-12">
+										
+<h1><center>{% trans from "article" %} do u want to delete this article??? {% endtrans %}</center></h1>
+										</div>
+									</div> 									
+{% endif %}									
+                                    <div class="clearfix form-actions" style="margin-top:200px;position:relative;">
+										<div class="col-md-offset-3 col-md-9">
+{% if action == 'edit' %}
+										
+{{ form_widget(form.save,{ 'label': 'edit article' }) }}
+{% endif %}
+{% if action == 'add' %}
+{{ form_widget(form.save,{ 'label': 'add article' }) }}
+{% endif %}	
+{% if action == 'del' %}
+{{ form_widget(form.save,{ 'label': 'delete article' }) }}
+{% endif %}											
+                                            
+                                            
+
+											
+										</div>
+									</div>        
+                                               {{ form_end(form) }}
+												</div>
+												</div>
+	</div>										
+	<br/>
+	<br/>
+	<br/>
+											{% if app.session.flashbag.has('success')  %}
+<button class="btn btn-success" style="left:400px;bottom:20px;width:300px;">{{ app.session.flashbag.get('success').0 }}</button>											
+<script>
+setTimeout(function(){
+  window.location = Routing.generate('adminarticle',{_locale : "{{ app.request.locale }}"});
+}, 2000);
+</script>
+{% endif %} 
+										
+								  </div>
+							  </div>
+							  {% endblock %}
+							  

@@ -1,0 +1,30 @@
+<div class="post">
+						<div class="post-wrap">
+							<div class="post-inner">
+								<div class="post-title"><i class="fa fa-comments"></i>{% trans from "public" %} comments {% endtrans %}<span></span></div>
+								<ol class="commentlist clearfix">
+								  {% for comment in data %}  
+								    <li class="comment">
+								        <div class="comment-body clearfix"> 
+								            <div class="avatar"></div>
+								            <div class="comment-text">
+								                <div class="author clearfix">
+								                	<div class="comment-meta">
+								                        <span>{{ comment.authorname }}</span>
+								                        
+								                    </div>
+								                        
+								                    
+								                
+								                </div>
+								                <div class="text"><p>{{ comment.description }}</p>
+								                </div>
+								            </div>
+								        </div>
+								    </li>
+									{% endfor %}
+								</ol>
+								<div class="clearfix"></div>
+							</div><!-- End post-inner -->
+						</div><!-- End post-wrap -->
+					</div><!-- End post -->

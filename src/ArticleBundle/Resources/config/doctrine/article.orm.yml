@@ -1,0 +1,23 @@
+ArticleBundle\Entity\article:
+    type: entity
+    table: article       			
+    repositoryClass: ArticleBundle\Entity\articleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '255'
+        description:
+            type: text
+        image:
+            type: string
+            length: '255'
+        category_id:
+            type: integer
+            length: '11'			
+    lifecycleCallbacks: {  }

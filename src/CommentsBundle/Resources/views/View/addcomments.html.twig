@@ -1,0 +1,32 @@
+<form action="{{ path('submitaddcomment')}}" method="post">
+<div class="post">
+
+						<div class="post-wrap">
+							<div class="post-inner">
+								<div class="post-title"><i class="fa fa-comment"></i>{% trans from "public" %} add comment {% endtrans %}</div>
+								<div class="comment-form">
+									<div class="form-input">
+										<i class="fa fa-user"></i>
+										<input type="text" id="authorname" name="authorname" required="required" placeholder="{% trans from "public" %} name {% endtrans %}" />
+									</div>
+									<div class="form-input">
+										<i class="fa fa-envelope"></i>
+										<input type="text" id="authoremail" name="authoremail" required="required" placeholder="{% trans from "public" %} email {% endtrans %}" />
+									</div>
+									<div class="form-input">
+										<i class="fa fa-home"></i>
+<input type="text" id="authorurl" name="authorurl" required="required" placeholder="link" />
+									</div>
+									<div class="form-input">
+										<i class="fa fa-comment"></i>
+									<textarea id="description" name="description" required="required" placeholder="{% trans from "public" %} description {% endtrans %}"></textarea>
+									</div>
+									<input type="hidden" name="article_id" value="{{ articleid }}"/>
+								<button type="submit" id="save" name="save">{% trans from "public" %}POST COMMENT {% endtrans %}</button>
+								</div>
+								<div class="clearfix"></div>
+							</div><!-- End post-inner -->
+						</div><!-- End post-wrap -->
+						
+					</div>
+</form>					

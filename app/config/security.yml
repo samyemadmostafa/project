@@ -1,0 +1,41 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+         UserBundle\Entity\user:
+            algorithm: plaintext		 
+    providers:
+        our_db_provider:
+            entity:
+                class: UserBundle:user
+                property: username
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        default:
+            anonymous: ~
+            http_basic: ~			
+            provider: our_db_provider
+            logout:
+                path:   /logout
+                target: /backfront				
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                default_target_path: /admincategory/en
+                always_use_default_target_path: true				
+        #secured_area:
+            #pattern: ^/emadtrans
+            #security: true
+            #http_basic: ~			
+            # activate different ways to authenticate
+    access_control:
+        # require ROLE_ADMIN for /admin*
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html

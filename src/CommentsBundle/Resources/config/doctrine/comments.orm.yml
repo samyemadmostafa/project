@@ -1,0 +1,27 @@
+CommentsBundle\Entity\comments:
+    type: entity
+    table: comments				
+    repositoryClass: CommentsBundle\Entity\commentsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: '1000'
+        authorname:
+            type: string
+            length: '255'
+        authoremail:
+            type: string
+            length: '255'
+        authorurl:
+            type: string
+            length: '255'
+        article_id:
+            type: integer
+            length: '11'			
+    lifecycleCallbacks: {  }
